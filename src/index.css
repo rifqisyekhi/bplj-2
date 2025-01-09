@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text-stroke-blue {
+  -webkit-text-stroke: 1.8px rgb(23, 23, 108);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes seamlessMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: seamlessMarquee 30s linear infinite;
+}
+
+.marquee-content span {
+  display: inline-block;
+  padding-right: 2rem; /* Add spacing between repeats */
+}
+
+/* Set the default state to hide the scrollbar */
+.scrollable-container {
+  overflow-y: hidden; /* Hide the scrollbar by default */
+  position: relative;
+}
+
+/* Show the scrollbar when hovered */
+.scrollable-container:hover {
+  overflow-y: auto; /* Show the scrollbar on hover */
+}
+
+.scrollable-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
